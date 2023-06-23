@@ -1,0 +1,115 @@
+{
+  "name": "Frontend Skill Tree",
+  "nodes": [
+    {
+      "id": 1,
+      "name": "HTML",
+      "description": "Creating the structure and content of web pages",
+      "requiredLevel": 0,
+      "prerequisites": [],
+      "children": [
+        {
+          "id": 2,
+          "name": "CSS",
+          "description": "Styling the web pages",
+          "requiredLevel": 2,
+          "prerequisites": [1],
+          "children": [
+            {
+              "id": 3,
+              "name": "CSS Frameworks",
+              "description": "Using pre-built CSS frameworks like Bootstrap",
+              "requiredLevel": 5,
+              "prerequisites": [2],
+              "children": []
+            },
+            {
+              "id": 4,
+              "name": "CSS Preprocessors",
+              "description": "Using CSS preprocessors like Sass or Less",
+              "requiredLevel": 5,
+              "prerequisites": [2],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "JavaScript",
+          "description": "Adding interactivity and functionality to web pages",
+          "requiredLevel": 3,
+          "prerequisites": [1],
+          "children": [
+            {
+              "id": 6,
+              "name": "JavaScript Frameworks",
+              "description": "Working with popular JavaScript frameworks like React or Angular",
+              "requiredLevel": 6,
+              "prerequisites": [5],
+              "children": [
+                {
+                  "id": 8,
+                  "name": "React",
+                  "description": "Building user interfaces with React",
+                  "requiredLevel": 7,
+                  "prerequisites": [6],
+                  "children": [
+                    {
+                      "id": 9,
+                      "name": "React Router",
+                      "description": "Implementing client-side routing with React Router",
+                      "requiredLevel": 8,
+                      "prerequisites": [8],
+                      "children": []
+                    },
+                    {
+                      "id": 10,
+                      "name": "Redux",
+                      "description": "Managing state with Redux",
+                      "requiredLevel": 8,
+                      "prerequisites": [8],
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": 11,
+                  "name": "Angular",
+                  "description": "Building web applications with Angular",
+                  "requiredLevel": 7,
+                  "prerequisites": [6],
+                  "children": [
+                    {
+                      "id": 12,
+                      "name": "RxJS",
+                      "description": "Handling asynchronous operations with RxJS",
+                      "requiredLevel": 8,
+                      "prerequisites": [11],
+                      "children": []
+                    },
+                    {
+                      "id": 13,
+                      "name": "Angular Material",
+                      "description": "Using pre-built UI components with Angular Material",
+                      "requiredLevel": 8,
+                      "prerequisites": [11],
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 7,
+              "name": "AJAX",
+              "description": "Making asynchronous HTTP requests",
+              "requiredLevel": 5,
+              "prerequisites": [5],
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

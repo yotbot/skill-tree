@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css"; // Import the CSS file for styling
+import skillTreeData from "./skillTreeData.json";
 
-function App() {
+interface SkillNode {
+  id: number;
+  name: string;
+  description: string;
+  requiredLevel: number;
+  prerequisites: number[];
+  children: SkillNode[];
+}
+
+interface SkillTreeProps {
+  nodes: SkillNode[];
+}
+
+const SkillTree: React.FC<SkillTreeProps> = ({ nodes }) => (
+  <ul className="skill-tree">
+    {nodes.map((node) => (
+      <li key={node.id} className="skill-node">
+        <strong>{node.name}</strong>
+        <p>{node.description}</p>
+        {node.children.length > 0 && <SkillTree nodes={node.children} />}
+      </li>
+    ))}
+  </ul>
+);
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <h1 className="app-title">{skillTreeData.name}</h1>
+      <SkillTree nodes={skillTreeData.nodes} />
     </div>
   );
-}
+};
 
 export default App;
